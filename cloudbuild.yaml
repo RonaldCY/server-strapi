@@ -1,0 +1,12 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-f",
+        "./Dockerfile",
+        "-t",
+        "gcr.io/web-church-20210722/web-church-image",
+        ".",
+      ]
+images: ["gcr.io/web-church-20210722/web-church-image"]
