@@ -1,4 +1,5 @@
-FROM strapi/base:latest
+# FROM strapi/base:latest
+FROM bitnami/node:latest
 
 # RUN npm install --global --unsafe-perm strapi@3.6.1
 
@@ -10,6 +11,8 @@ VOLUME /srv/app
 
 COPY . .
 # ENTRYPOINT ["docker-entrypoint.sh"]
+RUN npm config set unsafe-perm true
+
 RUN npm ci
 
 EXPOSE 8080
